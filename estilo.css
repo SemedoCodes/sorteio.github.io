@@ -1,0 +1,146 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita scroll manual */
+    height: 100%;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 200%; /* Duas telas de altura */
+    transition: transform 1s ease-in-out; /* Velocidade do deslize */
+}
+
+.cont {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#botao {
+    padding: 14px;
+    border-radius: 4px;
+    width: 300px;
+    background-color: coral;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+}
+
+
+
+footer {
+    position: fixed;
+    bottom: 20px; /* Um pouco de margem do fundo */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+}
+
+
+
+footer img {
+    max-width: 150px; /* Ajuste o tamanho aqui */
+    height: auto;
+    transition: opacity 0.5s ease; /* Para a troca não ser brusca */
+}
+
+/* --- Lógica de Troca de Cores --- */
+/* --- ESTADO INICIAL (Tela Azul) --- */
+#logo-preto {
+    display: none; /* Garante que o preto NÃO aparece no início */
+}
+
+#logo-branco {
+    display: inline-block; /* O branco aparece normalmente */
+}
+
+/* --- ESTADO APÓS CLIQUE (Tela Branca) --- */
+/* O seletor abaixo diz: "Quando o wrapper subir, mude os logos no footer" */
+#wrapper.subiu + footer #logo-branco {
+    display: none; /* Esconde o branco */
+}
+
+
+#wrapper.subiu + footer #logo-preto {
+    display: inline-block; /* Mostra o preto */
+}
+/* --- Cores de Fundo --- */
+
+
+/* Primeira tela (Título) */
+#tela-titulo {
+    background-color: rgb(27, 86, 203); /* A cor original (laranja) */
+}
+
+
+/* Segunda tela (Input de Ficheiro) */
+#tela-input {
+    background-color: rgb(255, 250, 250); /* Uma cor diferente (ex: cinza escuro) */
+    flex-direction: column;
+}
+
+
+h1 {
+    color: white;
+    font-size: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+
+/* Input customizado básico (opcional) */
+
+
+
+/* Estilizando o botão de upload (a label) */
+.btn-upload-custom {
+    width: 300px;         /* Mesma largura do teu botão de sorteio */
+    padding: 15px;
+    margin-bottom: 15px;  /* Espaço entre o upload e o botão sorteio */
+    border: 2px dashed #ccc; /* Um aspeto de "zona de drop" */
+    transition: all 0.3s;
+}
+
+.btn-upload-custom:hover {
+    border-color: rgb(27, 86, 203);
+    background-color: #f0f5ff;
+}
+
+/* Alinhamento do texto e ícone dentro do botão */
+.texto-upload {
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #666;
+}
+
+/* Ajuste no botão de sorteio para alinhar perfeitamente */
+#botao {
+    padding: 14px;
+    border-radius: 4px;
+    width: 300px;
+    background-color: coral;
+    color: white;
+    border: none; /* Remove a borda padrão do browser */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/* Classe que será adicionada via JavaScript */
+.subiu {
+    transform: translateY(-50%); /* Move o wrapper para cima */
+}
+
+#resultados {
+    margin-top: 30px;
+    width: 100%;
+    max-height: 60vh; /* Define uma altura máxima para a área das tabelas */
+    overflow-y: auto; /* Cria um scroll interno só para as tabelas */
+    padding: 20px;
+}
+

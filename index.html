@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <title>Sorteio</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="tela-titulo" class="cont" onclick="subirPagina()">
+            <h1>Vamos lá</h1>
+        </div>
+
+        <div id="tela-input" class="cont">
+            <label class="btn btn-default center-block btn-upload-custom">
+            <i class="fa fa-upload fa-2x" aria-hidden="true"></i>
+            <input type="file" class="input-sorteio" style="display: none;">
+            </label>
+            <button id="botao" onclick="sortear()">Sorteio</button>
+        </div>
+
+    
+    <footer>
+        <img src="fal_branco.png" id="logo-branco" alt="FAL">
+        <img src="fal_preto.png" id="logo-preto" alt="FAL">
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
