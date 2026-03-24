@@ -3,9 +3,8 @@ let emEspera = [];
 
 const LIMITES = {
     "Zona A": 10,
-    "Zona B": 10,
+    "Zona B": 12,
     "Zona C": 10,
-    "Zona D": 10
 };
 
 function subirPagina() {
@@ -33,7 +32,6 @@ document.querySelector('.input-sorteio').addEventListener('change', function(e) 
             if (linha[2]) prefs[linha[2].toString().trim()] = "Zona A";
             if (linha[3]) prefs[linha[3].toString().trim()] = "Zona B";
             if (linha[4]) prefs[linha[4].toString().trim()] = "Zona C";
-            if (linha[5]) prefs[linha[5].toString().trim()] = "Zona D";
 
             return {
                 timestamp: new Date(linha[0]),
@@ -52,7 +50,7 @@ document.querySelector('.input-sorteio').addEventListener('change', function(e) 
 function sortear() {
     if (bibliotecaAssociados.length === 0) return alert("Carrega o ficheiro!");
 
-    let alocacao = { "Zona A": [], "Zona B": [], "Zona C": [], "Zona D": [] };
+    let alocacao = { "Zona A": [], "Zona B": [], "Zona C": [] };
     let emEspera = [];
 
     // Ordenar por tempo
